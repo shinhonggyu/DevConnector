@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
+import ProfileTop from './ProfileTop';
+import ProfileAbout from './ProfileAbout';
 import { getProfileById } from '../../actions/profileActions';
 import { useParams, Link } from 'react-router-dom';
 
@@ -10,7 +12,7 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
 
   useEffect(() => {
     getProfileById(id);
-  }, [getProfileById]);
+  }, [getProfileById, id]);
 
   return (
     <>
@@ -28,6 +30,10 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
                 Edit Profile
               </Link>
             )}
+          <div className="profile-grid my-1">
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
+          </div>
         </>
       )}
     </>
