@@ -1,5 +1,10 @@
 import React, { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useParams,
+} from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
@@ -12,6 +17,7 @@ import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
 import PrivateRoute from './components/routing/PrivateRoute';
 // Redux
 import { Provider } from 'react-redux';
@@ -47,6 +53,9 @@ const App = () => {
               </Route>
               <Route exact path="/profiles">
                 <Profiles />
+              </Route>
+              <Route exact path="/profile/:id">
+                <Profile />
               </Route>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute
