@@ -2,5 +2,5 @@
     "mongoURI": "mongodb+srv://brad123:brad123@devconnector.0nuyx.mongodb.net/<dbname>?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken",
     "githubClientId": "506ee2a6d76d705662e7",
-    "githubSecret": "8dabe0710c83a907c80a4775ecd6d992cd2e84c0"
+    "githubSecret": "6b987c151284a4ccd6ccbfbeb5acf523b7a2e976"
 }
